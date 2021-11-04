@@ -11,6 +11,10 @@ body{
   text-align: center;
 }
 
+#btn-practiques-cursos {
+  background-color:   #6cad00;
+}
+
 #header {
   background: url("/images/imatge1.png");
   background-repeat: no-repeat !important;
@@ -31,4 +35,15 @@ body{
 
 #footer a {
   color:  #7dd2ff; 
+}
+
+#index-continguts {
+
+  background-color: #dddddd;
+}
+
+#iframe-map {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
