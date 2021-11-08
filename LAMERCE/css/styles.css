@@ -5,10 +5,32 @@ body{
 }
 
 #lamerce-button {
-  width: 500px;
+  color: white;
 	background-color:   #6cad00;
+  width: 300px;
   font-weight: 900;
+  text-align: left;
+}
+
+#lamerce {
+  color:inherit;
+}
+
+#navbarNav ul li a{
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-decoration: inherit;
   text-align: center;
+  color: gray; 
+}
+
+#navbarNav ul li a:hover{
+  background-color:  #6cad00;
+  color: white;
+}
+
+#pregunta {
+  font-weight: 900;
 }
 
 #btn-practiques-cursos {
