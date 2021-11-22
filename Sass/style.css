@@ -1,0 +1,245 @@
+/*vars ejercicio 3*/
+/*vars ejercicio 5*/
+body {
+  background-color: #ece9e8;
+  font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+h1 {
+  color: #f8b8aa;
+  font-family: sans-serif, Helvetica, Arial;
+}
+
+P {
+  color: #7a1414;
+}
+
+/* ejercicio 1*/
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* ejercicio 2*/
+.details {
+  text-align: left;
+}
+.details h3 {
+  font-size: 2rem;
+  text-align: left;
+}
+
+/* ejercicio 3*/
+header {
+  color: white;
+  background: gray;
+  padding: 10rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+header h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+/* ejercicio 4*/
+.button {
+  display: inline-block;
+  margin: 1 rem 0;
+  color: white;
+  font-size: 1.3rem;
+  background: #cc6699;
+  letter-spacing: 0.02rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1rem 0.9rem;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  background: #864566;
+  color: #fff;
+}
+.button:hover, .button:active, .button:focus:active {
+  background: #006eb4;
+  border-color: #006eba;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* ejercicio 5*/
+section {
+  background: #fff;
+  color: #1c262b;
+  padding: 3.5rem 0;
+}
+section.section--primary {
+  background: #cc6699;
+  color: #fff;
+}
+section.section--primary--alt {
+  background: #27a4f4;
+  color: #fff;
+}
+section.section--primary-light {
+  background: rgba(0, 126, 206, 0.1);
+}
+section.section--grey {
+  background: #29363e;
+  color: #fff;
+}
+section:h3 {
+  text-align: center;
+  font-size: 2 rem;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+section:li {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+section:p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* ejercicio 6*/
+.features {
+  text-align: center;
+  padding: 1rem;
+}
+.features:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.features i {
+  font-size: 4rem;
+  margin: 0 0 2rem 0;
+}
+.features p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+/* ejercicio 7*/
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+blockquote:before {
+  display: inline-block;
+  color: #cc6699;
+  font-size: 2rem;
+}
+blockquote p {
+  margin: 0;
+  display: inline;
+  font-size: 1.5rem;
+}
+blockquote cite {
+  font-size: 1rem;
+  display: block;
+  margin: 5rem 0 0 1.2rem;
+  text-emphasis-style: italic;
+}
+blockquote cite:before {
+  content: "-";
+}
+
+/* ejercicio 9*/
+footer {
+  background: #2d2b2a;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  display: block;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+footer ul li a:hover {
+  color: white;
+}
+
+/* ejercicio 10*/
+.bg-image {
+  background: #cc6699;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.bg-image:before {
+  content: "";
+  display: block;
+  position: absolute;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("./images/fons.jpg") #fff;
+  background-attachment: fixed;
+  opacity: 0.8;
+}
+
+/* ejercicio 11*/
+.funky {
+  font-family: fantasy;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* ejercicio 12*/
+.borde {
+  border-style: solid;
+  border-left: 4px;
+  border-left-color: #654;
+  border-right-width: 2px;
+  border-right-color: #bbb;
+}
+
+/* anidacion*/
+.caja {
+  border: 1px solid black;
+  width: 500px;
+  margin: opx auto;
+  text-align: center;
+  align-self: center;
+  background-color: white;
+  padding: 10px;
+  align-content: center;
+}
+.caja h1 {
+  color: blue;
+}
+.caja p {
+  color: green;
+}
+.caja .info {
+  font-size: 10px;
+}
+.caja .info .author {
+  font-size: 15px;
+  color: orange;
+}
+
+/*# sourceMappingURL=style.css.map */
