@@ -1,0 +1,245 @@
+//MIXIN
+@mixin font-family {
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+}
+
+@mixin hX {
+  @include font-family(); 
+  font-weight: bold;
+}
+
+@mixin font($size:15px){
+  font-size: $size;
+}
+
+@mixin font-size-weigth($size, $weight){
+  @include font-family(); 
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin color($color: #000){
+  color: $color; 
+}
+
+@mixin shadows($x, $y, $p, $color){
+  width: 300px;
+  height: 200px;
+  background-color: yellow;
+  margin-bottom: 10px;
+  -webkit-box-shadow: $x, $y, $p, $color;
+  -moz-box-shadow: $x, $y, $p, $color; 
+  box-shadow: $x, $y, $p, $color;
+}
+
+.section1 > h1 {
+    margin: 0 0 20px 0; 
+    @include hX;
+    @include font(20px); 
+    color: #333;  
+}
+
+.section1 > h2 {
+    margin: 0 0 15px 0; 
+    @include hX;
+    @include font(); 
+}
+
+.section1 > h3 {
+    margin: 0 0 15px 0; 
+    @include hX;
+    @include font(10px); 
+    color: #999; 
+}
+
+.section2 > h1 {
+  @include font-size-weigth(24px, bold); 
+  margin: 0 0 24px 0; 
+  color: #333; 
+}
+
+.section2 > h2 {
+  margin: 0 0 18px 0; 
+  @include font-size-weigth(18px, 900); 
+}
+
+.section2 > h3 {
+  margin: 0 0 10px 0; 
+  @include font-size-weigth(10px, 300); 
+  color: #999; 
+}
+
+.section3 > h1 {
+  margin: 0 0 24px 0; 
+  @include font-size-weigth(24px, bold);
+  @include color(); 
+}
+
+.section3 > h2 {
+  margin: 0 0 18px 0;
+  @include font-size-weigth(18px, 600); 
+  @include color(#666);
+}
+
+.section3 > h3 {
+  margin: 0 0 10px 0;
+  @include font-size-weigth(10px, 300); 
+  @include color(#999);
+}
+
+#caja1 {
+  @include shadows(10px, 10px, 5px, blue);
+}
+
+#caja2 {
+  @include shadows(10px, 10px, 5px, red);
+}
+
+#caja3 {
+  @include shadows(10px, 10px, 5px, #888888); 
+}
+
+
+//EXTEND
+
+.alerta {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  text-align: 3px;
+  color: #fff;
+  background: #67e24f;
+}
+
+
+.alerta, .error, .acceso {
+  @extend .alerta; 
+}
+
+.error, .acceso {
+  background: #b23f24;
+  font-size: 10px;
+}
+
+.acceso {
+  background: #46b6ea;
+}
+
+//PLACEHOLDER EJERCICIO 5.2
+
+$bg-succes: green; 
+$bg-error: red; 
+$bg-warning: orange; 
+
+%message {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  text-align: 3px;
+  color: #fff;
+  background: #67e24f;
+}
+
+.message-success {
+  @extend %message; 
+  background-color: $bg-succes;
+}
+
+.message-error {
+  @extend %message; 
+  background-color: $bg-error;
+}
+
+.message-access {
+  @extend %message; 
+  background-color: $bg-warning;
+}
+
+
+//PLACEHOLDER EJERCICIO 6
+
+$size: 5px;
+
+%caja {
+  margin: $size; 
+  border-radius: $size;
+  display: inline-block;
+  height: 200px;
+  width: 15%;
+}
+
+#ex6caja1 {
+  @extend %caja; 
+  background-color: orange;
+}
+
+#ex6caja2 {
+  @extend %caja; 
+  background-color: purple;
+}
+
+#ex6caja3 {
+  @extend %caja; 
+  background-color: red;
+}
+
+#ex6caja4 {
+  @extend %caja;
+  background-color: silver;
+}
+
+#ex6caja5 {
+  @extend %caja; 
+  background-color: red;
+}
+
+//EJERCICIO 7 MIXIN EXTEND PLACEHOLDER
+
+@mixin boton { //MIXIN 
+
+  font-size: 24px;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  border:none; 
+  cursor: pointer;
+}
+
+.boton-principal-mixin {
+  @include boton; 
+  background: #0BE66A;
+}
+
+.boton-secundario-mixin {
+  @include boton; 
+  background: #DDDDDD;
+}
+
+%boton {
+  font-size: 24px;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  border:none; 
+  cursor: pointer;
+}
+
+.boton-principal-extend {
+  @extend %boton; 
+  background: #0BE66A;
+}
+
+.boton-secundario-extend {
+  @extend %boton; 
+  background: #DDDDDD;
+}
+
+
+//PLACEHOLDER

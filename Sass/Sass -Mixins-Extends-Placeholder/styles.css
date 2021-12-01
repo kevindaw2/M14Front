@@ -1,0 +1,219 @@
+.section1 > h1 {
+  margin: 0 0 20px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+
+.section1 > h2 {
+  margin: 0 0 15px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.section1 > h3 {
+  margin: 0 0 15px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  color: #999;
+}
+
+.section2 > h1 {
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+  color: #333;
+}
+
+.section2 > h2 {
+  margin: 0 0 18px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.section2 > h3 {
+  margin: 0 0 10px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 300;
+  color: #999;
+}
+
+.section3 > h1 {
+  margin: 0 0 24px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.section3 > h2 {
+  margin: 0 0 18px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+}
+
+.section3 > h3 {
+  margin: 0 0 10px 0;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 300;
+  color: #999;
+}
+
+#caja1 {
+  width: 300px;
+  height: 200px;
+  background-color: yellow;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 10px, 10px, 5px, blue;
+  -moz-box-shadow: 10px, 10px, 5px, blue;
+  box-shadow: 10px, 10px, 5px, blue;
+}
+
+#caja2 {
+  width: 300px;
+  height: 200px;
+  background-color: yellow;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 10px, 10px, 5px, red;
+  -moz-box-shadow: 10px, 10px, 5px, red;
+  box-shadow: 10px, 10px, 5px, red;
+}
+
+#caja3 {
+  width: 300px;
+  height: 200px;
+  background-color: yellow;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 10px, 10px, 5px, #888888;
+  -moz-box-shadow: 10px, 10px, 5px, #888888;
+  box-shadow: 10px, 10px, 5px, #888888;
+}
+
+.alerta, .error, .acceso {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  text-align: 3px;
+  color: #fff;
+  background: #67e24f;
+}
+
+.error, .acceso {
+  background: #b23f24;
+  font-size: 10px;
+}
+
+.acceso {
+  background: #46b6ea;
+}
+
+.message-access, .message-error, .message-success {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  text-align: 3px;
+  color: #fff;
+  background: #67e24f;
+}
+
+.message-success {
+  background-color: green;
+}
+
+.message-error {
+  background-color: red;
+}
+
+.message-access {
+  background-color: orange;
+}
+
+#ex6caja5, #ex6caja4, #ex6caja3, #ex6caja2, #ex6caja1 {
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  height: 200px;
+  width: 15%;
+}
+
+#ex6caja1 {
+  background-color: orange;
+}
+
+#ex6caja2 {
+  background-color: purple;
+}
+
+#ex6caja3 {
+  background-color: red;
+}
+
+#ex6caja4 {
+  background-color: silver;
+}
+
+#ex6caja5 {
+  background-color: red;
+}
+
+.boton-principal-mixin {
+  font-size: 24px;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background: #0BE66A;
+}
+
+.boton-secundario-mixin {
+  font-size: 24px;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background: #DDDDDD;
+}
+
+.boton-secundario-extend, .boton-principal-extend {
+  font-size: 24px;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.boton-principal-extend {
+  background: #0BE66A;
+}
+
+.boton-secundario-extend {
+  background: #DDDDDD;
+}
+
+/*# sourceMappingURL=styles.css.map */
