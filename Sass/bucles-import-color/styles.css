@@ -1,0 +1,86 @@
+.boton {
+  background: #3498db;
+  border-radius: 28px;
+  border-style: solid;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 180px;
+}
+
+.boton {
+  border-color: black;
+}
+
+.caja1, .caja2, .caja3, .caja4, .caja5 {
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  height: 200px;
+  width: 15%;
+}
+
+.caja1 {
+  background-color: orange;
+  border-color: 3px solid black;
+}
+
+.caja2 {
+  background-color: purple;
+  border-color: 3px solid yellow;
+}
+
+.caja3 {
+  background-color: red;
+  border-color: 3px solid tomato;
+}
+
+.caja4 {
+  background-color: silver;
+  border-color: 3px solid tomato;
+}
+
+.caja5 {
+  background-color: green;
+  border-color: 3px solid tomato;
+}
+
+ul {
+  width: 200px;
+}
+
+.social-twitter {
+  background-color: #128DEC;
+}
+.social-twitter a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-facebook {
+  background-color: #095EA0;
+}
+.social-facebook a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-github {
+  background-color: #0076D1;
+}
+.social-github a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-rss {
+  background-color: #D17100;
+}
+.social-rss a {
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

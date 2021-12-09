@@ -1,0 +1,145 @@
+
+%auxiliar {
+    background: #3498db;
+    border-radius: 28px;
+    border-style: solid;
+    font-family: Arial;
+    color: #ffffff; 
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 180px;
+}
+
+@mixin boton-bg($bg-color) {
+    @extend %auxiliar; 
+   
+    @if $bg-color == black {
+        border-color: $bg-color; 
+    } 
+    @if $bg-color == red {
+        border-color: $bg-color; 
+    } 
+    @if $bg-color == blue {
+        border-color: $bg-color; 
+    }
+     @if $bg-color == yellow {
+        border-color: $bg-color; 
+    } 
+}
+
+.boton {
+    @include boton-bg(black); 
+}
+
+$caja-height: 200px; 
+$caja-width: 15%; 
+
+%caja {
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    height: $caja-height; 
+    width: $caja-width;
+}
+
+@mixin caja-color ($color) {
+
+    $default: tomato; 
+
+    @if $color == black {
+        background-color: $color;
+        border: 3px solid $default; 
+    }
+
+    @if $color == orange {
+        background-color: $color;
+        border-color:3px solid black;
+    }
+    @if $color == purple {
+        background-color: $color;
+        border-color:3px solid yellow;
+    }
+    @if $color == silver {
+        background-color: $color;
+        border-color:3px solid $default;
+    }
+    @if $color == green {
+        background-color: $color;
+        border-color:3px solid $default;
+    }
+    @if $color == red {
+        background-color: $color;
+        border-color:3px solid $default;
+    }
+}
+
+.caja1, .caja2, .caja3, .caja4, .caja5 {
+    @extend %caja; 
+}
+
+.caja1 {
+    @include caja-color(orange);
+}
+
+.caja2 {
+    @include caja-color(purple); 
+}
+
+.caja3 {
+    @include caja-color(red); 
+}
+
+.caja4 {
+    @include caja-color(silver); 
+}
+
+.caja5 {
+    @include caja-color(green); 
+}
+
+$estilos: (
+    twitter: #128DEC,
+    facebook: #095EA0, 
+    github: #0076D1,
+    rss: #D17100
+);
+
+@mixin fondo($color){
+  @if map-has-key($estilos, $color){
+    background-color: map-get($estilos, $color);
+  } 
+}
+
+ul {
+    width: 200px;
+}
+
+.social-twitter {
+    @include fondo(twitter);
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+}
+.social-facebook {
+    @include fondo(facebook);
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+}
+.social-github {
+    @include fondo(github);
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+}
+.social-rss {
+    @include fondo(rss);
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+}
