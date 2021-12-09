@@ -41,6 +41,12 @@ $caja-width: 15%;
     display: inline-block;
     height: $caja-height; 
     width: $caja-width;
+    border: 3px solid black;
+}
+
+%borders {
+    border-width: 3px;
+    border-style: solid;
 }
 
 @mixin caja-color ($color) {
@@ -49,28 +55,27 @@ $caja-width: 15%;
 
     @if $color == black {
         background-color: $color;
-        border: 3px solid $default; 
     }
 
     @if $color == orange {
         background-color: $color;
-        border-color:3px solid black;
+        border-color:black;
     }
     @if $color == purple {
         background-color: $color;
-        border-color:3px solid yellow;
+        border-color:yellow;
     }
     @if $color == silver {
         background-color: $color;
-        border-color:3px solid $default;
+        border-color:$default;
     }
     @if $color == green {
         background-color: $color;
-        border-color:3px solid $default;
+        border-color: $default;
     }
     @if $color == red {
         background-color: $color;
-        border-color:3px solid $default;
+        border-color:$default;
     }
 }
 
@@ -79,22 +84,27 @@ $caja-width: 15%;
 }
 
 .caja1 {
+    @extend %borders;
     @include caja-color(orange);
 }
 
 .caja2 {
+    @extend %borders;
     @include caja-color(purple); 
 }
 
 .caja3 {
+    @extend %borders;
     @include caja-color(red); 
 }
 
 .caja4 {
+    @extend %borders;
     @include caja-color(silver); 
 }
 
 .caja5 {
+    @extend %borders;
     @include caja-color(green); 
 }
 
@@ -105,41 +115,250 @@ $estilos: (
     rss: #D17100
 );
 
-@mixin fondo($color){
-  @if map-has-key($estilos, $color){
-    background-color: map-get($estilos, $color);
+ul {
+    width: 200px;
+    list-style: none;
+}
+
+@each $social, $color in $estilos {
+    .social-#{$social} {
+        background-color: $color;
+        a {
+            color:white; 
+        }
+    } 
+}
+
+$i: 1;
+$w: 20; 
+$amount: 20%; 
+
+@while $i < 10 {
+    .selector:nth-child(#{$i}) {
+        width: $w;
+        height: 15px;
+        border: 1px solid #aaa;
+        background: darken(#fff, $amount); 
+        margin-bottom: $i+px;
+    } 
+    $i: $i + 1; 
+    $w: $w + 20;
+    $amount: $amount + 10%; 
+} 
+
+/* EJERCICIO 5*/
+
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+.wrap {
+    @import "theme"; 
+    margin:0 auto;
+    width:800px;
+    text-align:center;
+}
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
   } 
 }
 
-ul {
-    width: 200px;
+.btn {
+ color:white;
+ text-decoration:none;
+ padding:5px 10px;
+ border-radius:3px;
+ font-family: 'Poiret One', cursive;
+ font-size:2em;
 }
 
-.social-twitter {
-    @include fondo(twitter);
-    & a {
-        color: white;
-        text-decoration: none;
-    }
+.btn-green {
+   @include button-bg(#2ecc71);
 }
-.social-facebook {
-    @include fondo(facebook);
-    & a {
-        color: white;
-        text-decoration: none;
-    }
+
+.btn-blue {
+   @include button-bg(#3498db);
 }
-.social-github {
-    @include fondo(github);
-    & a {
-        color: white;
-        text-decoration: none;
-    }
+
+.btn-yellow{
+   @include button-bg(#f1c40f);
 }
-.social-rss {
-    @include fondo(rss);
-    & a {
-        color: white;
-        text-decoration: none;
+
+.btn-red {
+   @include button-bg(#e74c3c);
+}
+
+/*EJERCICIO 6 home.html*/
+@import 'navbar';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+.home {
+  background-color: $light;
+
+  &_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      height: 100%;
     }
+
+    &--left {
+      width: 100%;
+      line-height: 1.2;
+
+      @include tablet {
+        padding: 5rem 0;
+      }
+
+      @include mobile {
+        line-height: 1.5;
+      }
+    }
+
+    &--left h1 {
+      font-size: 4rem;
+      color: $lime;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    &--left h2 {
+      font-size: 4rem;
+      color: $dark;
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+
+    &--left p {
+      font-size: 2rem;
+      color: $dark;
+      margin-top: 1rem;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    &--btn {
+      font-size: 1rem;
+      background-color: $lime;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 4px;
+      color: $light;
+      margin-top: 2rem;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    &--btn a {
+      position: relative;
+      z-index: 2;
+      color: $light;
+      text-decoration: none;
+    }
+
+    &--btn:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: $orangeRed;
+      border-radius: 4px;
+    }
+
+    &--btn:hover:after {
+      width: 100%;
+    }
+
+    &--right {
+      text-align: center;
+    }
+
+    &--img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+/* EJERCICIO 7*/
+
+%cajas {
+  margin: 1px;
+  display: inline-block;
+  height: 100px; 
+  width: 20%;
+  border: 1px solid black;
+}
+
+.caja-1, .caja-2, .caja-3, .caja-4, .caja-5, .caja-6 {
+  @extend %cajas; 
+}
+
+$main-colour: hsl(152, 100%, 30%);
+
+$comp-colour: adjust-hue($main-colour, 180deg);
+
+$comp-comp-colour: adjust-hue($comp-colour, 180deg); 
+
+@mixin bg-color($base, $saturacion, $luminosidad) {
+  background-color: hsl($base, $saturacion, $luminosidad);
+}
+
+.caja-1 {
+  @include bg-color(152, 100%, 30%);
+}
+
+.caja-2 {
+  @include bg-color(152, 100%, 40%);
+}
+
+.caja-3 {
+  @include bg-color(152, 100%, 10%);
+}
+
+.caja-4 {
+
+  @include bg-color(152, 10%, 100%);
+}
+
+.caja-5 {
+  background-color: $comp-colour;
+}
+
+.caja-6 {
+  background-color: $comp-comp-colour;
 }
