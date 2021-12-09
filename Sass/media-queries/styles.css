@@ -1,0 +1,48 @@
+article, aside {
+  background-color: #ccc;
+  margin-bottom: 20px;
+  min-height: 80px;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  article {
+    float: left;
+    background-color: #999;
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  article {
+    background-color: #666;
+    width: 60%;
+  }
+}
+@media (min-width: 960px) {
+  article {
+    background-color: #333;
+    width: 48%;
+  }
+}
+
+@media (min-width: 480px) {
+  aside {
+    float: right;
+    background-color: #999;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  aside {
+    background-color: #666;
+    width: 35%;
+  }
+}
+@media (min-width: 960px) {
+  aside {
+    background-color: #333;
+    width: 48%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,67 @@
+$peque: 480px; 
+$medio: 768px; 
+$largo: 960px; 
+
+%articles {
+    background-color: #ccc;
+    margin-bottom: 20px;
+    min-height: 80px;
+    width: 100%;
+}
+
+@mixin responsive ($media) {
+    @if $media == $peque {
+        @media (min-width: $peque){
+            @content; 
+        }
+    } 
+
+    @if $media == $medio {
+        @media (min-width: $medio){
+            @content; 
+        }
+    }
+
+    @if $media == $largo {
+        @media (min-width: $largo){
+            @content; 
+        }
+    }
+}
+
+article, aside{
+    @extend %articles;
+}
+
+article {
+    @include responsive($peque) {
+        float:left;
+        background-color: #999;
+        width: 70%; 
+    }
+    @include responsive($medio) {
+        background-color: #666;
+        width: 60%;
+    }
+    @include responsive($largo) {
+        background-color: #333;
+        width: 48%;
+    }
+}
+
+aside {
+    @include responsive($peque) {
+        float:right;
+        background-color: #999;
+        width: 25%; 
+    }
+    @include responsive($medio) {
+        background-color: #666;
+        width: 35%;
+    }
+
+    @include responsive($largo) {
+        background-color: #333;
+        width: 48%;
+    }
+}
